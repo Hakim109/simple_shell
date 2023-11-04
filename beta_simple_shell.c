@@ -153,9 +153,9 @@ void func_helper_cd(void);
 int msg_help(Data_sl *Data_sh);
 
 /**
- * strcat_cd - function that concatenates the message for cd error
+ * strcat_cd - function concatenates error
  *
- * @Data_sh: data relevant (directory)
+ * @Data_sh: data (directory)
  * @msg: message
  * @error: stdout msg
  * @ver_str: ln_count lines
@@ -191,9 +191,9 @@ char *strcat_cd(Data_sl *Data_sh, char *msg, char *error, char *ver_str)
 }
 
 /**
- * error_get_cd - error message for cd command in get_cd
- * @Data_sh: data relevant (directory)
- * Return: Error message
+ * error_get_cd - error message to cmd get_cd
+ * @Data_sh: data directory
+ * Return: Error
  */
 char *error_get_cd(Data_sl *Data_sh)
 {
@@ -296,9 +296,9 @@ char *error_exit_shell(Data_sl *Data_sh)
 }
 
 /**
- * error_env - error message for env in get_env.
- * @Data_sh: data relevant (ln_count, arguments)
- * Return: error message.
+ * error_env - error message to get_env.
+ * @Data_sh: data (ln_count, arguments)
+ * Return: error.
  */
 char *error_env(Data_sl *Data_sh)
 {
@@ -333,7 +333,6 @@ char *error_env(Data_sl *Data_sh)
 /**
  * error_path - error path permission denied
  * @Data_sh: data (ln_count, arguments).
- *
  * Return: error.
  */
 char *error_path(Data_sl *Data_sh)
@@ -1776,7 +1775,6 @@ int _env(Data_sl *Data_sh)
  * a new env or alias
  * @cmd_name: name (env or alias)
  * @value: value (env or alias)
- *
  * Return: new env or alias.
  */
 char *copy_info(char *cmd_name, char *value)
@@ -1798,7 +1796,6 @@ char *copy_info(char *cmd_name, char *value)
 
 /**
  * envSet - sets an environment var
- *
  * @cmd_name: name of the environment var
  * @value: value of the environment var
  * @Data_sh: data strcture (environ)
@@ -1832,7 +1829,6 @@ void envSet(char *cmd_name, char *value, Data_sl *Data_sh)
  * env_Set - compares env var names
  * with the name passed.
  * @Data_sh: data relevant (env cmd_name and env value)
- *
  * Return: 1 on success.
  */
 int env_Set(Data_sl *Data_sh)
@@ -1851,9 +1847,7 @@ int env_Set(Data_sl *Data_sh)
 
 /**
  * _unset_env - deletes a environment var
- *
  * @Data_sh: data relevant (env cmd_name)
- *
  * Return: 1 on success.
  */
 int _unset_env(Data_sl *Data_sh)
@@ -1902,7 +1896,6 @@ int _unset_env(Data_sl *Data_sh)
 
 /**
  * exec_line - finds builtins and commands
- *
  * @Data_sh: data relevant (args)
  * Return: 1 on success.
  */
@@ -1924,7 +1917,6 @@ int exec_line(Data_sl *Data_sh)
 
 /**
  * exit_shell - exits the shell
- *
  * @Data_sh: data relevant (status and args)
  * Return: 0 on success.
  */
@@ -2201,7 +2193,6 @@ void set_data(Data_sl *Data_sh, char **av)
 
 /**
  * read_line - reads the user_in str.
- *
  * @End_of: return value of getline function
  * Return: user_in str
  */
@@ -2218,7 +2209,6 @@ char *read_line(int *End_of)
 
 /**
  * check_env - checks if the typed variable is an env variable
- *
  * @h: head of linked list
  * @in: user_in str
  * @data: data strcture
@@ -2259,7 +2249,6 @@ void check_env(StoreVar **h, char *in, Data_sl *data)
 
 /**
  * check_vars - check if the typed variable is $$ or $?
- *
  * @h: head of the linked list
  * @in: user_in str
  * @st: last status of the Shell
@@ -2301,7 +2290,6 @@ int check_vars(StoreVar **h, char *in, char *st, Data_sl *data)
 
 /**
  * replaced_user_in - replaces str into variables
- *
  * @head: head of the linked list
  * @user_in: user_in str
  * @new_user_in: new user_in str (replaced)
@@ -2353,7 +2341,6 @@ char *replaced_user_in(StoreVar **head, char *user_in, char *new_user_in, int nl
 
 /**
  * rep_var - calls functions to replace str into vars
- *
  * @user_in: user_in str
  * @Data_sh: data strcture
  * Return: replaced str
